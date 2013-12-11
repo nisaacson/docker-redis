@@ -1,18 +1,24 @@
 Docker Redis
 ===========
 
-Builds a docker image for redis.
+Builds a docker image for redis. This is available as a [Trusted Build](http://blog.docker.io/2013/11/introducing-trusted-builds/) on the public docker index.
 
-```
+* Public Docker Index Link: [nisaacson/redis](https://index.docker.io/u/nisaacson/redis/)
+
+# Usage
+
+```bash
+docker pull nisaacson/docker
 ID=$(docker run -d -p 2222:22 -p 6379:6379 nisaacson/redis)
 sleep "4s"
 docker logs $ID
+redis-cli -h localhost -p 6379
 ```
 
 # Building
 
 
-To build a docker image, use the included Vagrantfile to launch up a virtual machine with docker already installed. The Vagrantfile uses the [vagrant docker provisioner](http://docs.vagrantup.com/v2/provisioning/docker.html) to install docker
+To build a docker image, use the included `Vagrantfile` to launch up a virtual machine with docker already installed. The Vagrantfile uses the [vagrant docker provisioner](http://docs.vagrantup.com/v2/provisioning/docker.html) to install docker
 
 **Requirements**
 
