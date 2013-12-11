@@ -23,7 +23,7 @@ RUN apt-get install -y redis-server
 # Setup process management
 RUN mkdir -p /var/run/sshd
 RUN mkdir -p /var/log/supervisor
-RUN locale-gen en_US en_US.UTF-8
+# RUN locale-gen en_US en_US.UTF-8
 ADD ./etc/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Change ssh password
